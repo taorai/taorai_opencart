@@ -1,4 +1,27 @@
 <?php
+
+/* ---------------------------------------------------------------------------------- */
+/*  OpenCart library class Mail (with modififications for the Override Engine)        */
+/*                                                                                    */
+/*  Original file Copyright © 2016 by Daniel Kerr (www.opencart.com)                  */
+/*  Modifications Copyright © 2016 by J.Neuhoff (www.mhccorp.com)                     */
+/*                                                                                    */
+/*  This file is part of OpenCart.                                                    */
+/*                                                                                    */
+/*  OpenCart is free software: you can redistribute it and/or modify                  */
+/*  it under the terms of the GNU General Public License as published by              */
+/*  the Free Software Foundation, either version 3 of the License, or                 */
+/*  (at your option) any later version.                                               */
+/*                                                                                    */
+/*  OpenCart is distributed in the hope that it will be useful,                       */
+/*  but WITHOUT ANY WARRANTY; without even the implied warranty of                    */
+/*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                     */
+/*  GNU General Public License for more details.                                      */
+/*                                                                                    */
+/*  You should have received a copy of the GNU General Public License                 */
+/*  along with OpenCart.  If not, see <http://www.gnu.org/licenses/>.                 */
+/* ---------------------------------------------------------------------------------- */
+
 class Mail {
 	protected $to;
 	protected $from;
@@ -17,9 +40,34 @@ class Mail {
 	public $verp = false;
 	public $parameter = '';
 
+	protected static $event = null;
+
 	public function __construct($config = array()) {
 		foreach ($config as $key => $value) {
 			$this->$key = $value;
+		}
+		
+		// find the OpenCart Event object from calling class if not yet set here
+		if (self::$event==null) {
+			$object = null;
+			$backtrace = debug_backtrace();
+			if (!empty($backtrace[1]['class'])) {
+				$class = $backtrace[1]['class'];
+				if (substr($class,0,strlen('Controller'))=='Controller') {
+					if (!empty($backtrace[1]['object'])) {
+						$object = $backtrace[1]['object'];
+					}
+				} else if (substr($class,0,strlen('Model'))=='Model') {
+					if (!empty($backtrace[1]['object'])) {
+						$object = $backtrace[1]['object'];
+					}
+				}
+			}
+			if ($object) {
+				if ($object->event) {
+					self::$event = $object->event;
+				}
+			}
 		}
 	}
 
@@ -56,6 +104,13 @@ class Mail {
 	}
 
 	public function send() {
+		// if on catalog frontend then trigger a before-event
+		if (!defined('DIR_CATALOG')) { 
+			if (self::$event) {
+				self::$event->trigger( 'system/mail/send/before', array(&$this) );
+			}
+		}
+
 		if (!$this->to) {
 			throw new \Exception('Error: E-Mail to required!');
 		}
@@ -426,6 +481,13 @@ class Mail {
 				}
 
 				fclose($handle);
+			}
+		}
+
+		// if on catalog frontend then trigger an after-event
+		if (!defined('DIR_CATALOG')) { 
+			if (self::$event) {
+				self::$event->trigger( 'system/mail/send/after', array(&$this) );
 			}
 		}
 	}
