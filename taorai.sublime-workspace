@@ -1,0 +1,242 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 372.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/steven/GitRepository/taorai/admin/controller/startup/startup.php",
+		"/home/steven/GitRepository/taorai/admin/controller/startup/startup.php.original",
+		"/home/steven/GitRepository/taorai/system/library/cart/affiliate.php",
+		"/home/steven/GitRepository/taorai/system/library/cart/cart.php",
+		"/home/steven/GitRepository/taorai/system/engine/factory.php",
+		"/home/steven/GitRepository/taorai/admin/controller/startup/login.php.original",
+		"/home/steven/GitRepository/taorai/admin/controller/startup/login.php",
+		"/home/steven/GitRepository/taorai/admin/controller/startup/error.php",
+		"/home/steven/GitRepository/taorai/admin/controller/startup/error.php.original",
+		"/home/steven/GitRepository/taorai/.gitignore",
+		"/home/steven/GitRepository/taorai/admin/controller/common/column_left.php",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/localisation/district.php",
+		"/home/steven/GitRepository/taorai/admin/view/template/localisation/district_list.tpl",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/common/column_left.php",
+		"/home/steven/GitRepository/taorai/admin/view/template/localisation/district_form.tpl",
+		"/home/steven/GitRepository/taorai/admin/view/javascript/jquery/flot/examples/series-pie/index.html",
+		"/home/steven/GitRepository/taorai/admin/config.php",
+		"/home/steven/GitRepository/taorai/admin/controller/localisation/geo_zone.php",
+		"/home/steven/GitRepository/taorai/admin/controller/localisation/district.php",
+		"/home/steven/GitRepository/taorai/admin/model/localisation/district.php",
+		"/home/steven/GitRepository/taorai/admin/controller/localisation/zone.php",
+		"/home/steven/GitRepository/taorai/admin/model/localisation/city.php",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/localisation/currency.php",
+		"/home/steven/GitRepository/taorai/admin/controller/localisation/city.php",
+		"/home/steven/GitRepository/taorai/catalog/language/th/th.php",
+		"/home/steven/GitRepository/taorai/admin/language/th/th.php",
+		"/home/steven/GitRepository/taorai/admin/controller/localisation/language.php",
+		"/home/steven/GitRepository/taorai/admin/controller/setting/store.php",
+		"/home/steven/GitRepository/taorai/system/engine/loader.php",
+		"/home/steven/GitRepository/taorai/admin/view/template/common/header.tpl",
+		"/home/steven/GitRepository/taorai/admin/index.php",
+		"/home/steven/GitRepository/taorai/index.php",
+		"/home/steven/GitRepository/taorai/system/startup.php",
+		"/home/steven/GitRepository/taorai/admin/controller/common/dashboard.php",
+		"/home/steven/GitRepository/taorai/admin/view/template/extension/extension/dashboard.tpl",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/common/dashboard.php",
+		"/home/steven/GitRepository/taorai/admin/controller/event/compatibility.php",
+		"/home/steven/GitRepository/taorai/install/controller/3rd_party/extension.php",
+		"/home/steven/GitRepository/taorai/catalog/view/theme/default/template/extension/payment/pp_standard.tpl",
+		"/home/steven/GitRepository/taorai/catalog/view/theme/default/template/common/footer.tpl",
+		"/home/steven/GitRepository/taorai/catalog/language/en-gb/common/footer.php",
+		"/home/steven/GitRepository/taorai/admin/view/template/extension/sms/chuanglan.tpl",
+		"/home/steven/GitRepository/taorai/admin/view/template/common/footer.tpl",
+		"/home/steven/GitRepository/taorai/admin/view/template/common/dashboard.tpl",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/common/footer.php",
+		"/home/steven/GitRepository/taorai/admin/language/zh-cn/common/footer.php",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/setting/setting.php",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/extension/module/qq_login.php",
+		"/home/steven/GitRepository/taorai/admin/language/en-gb/common/header.php",
+		"/home/steven/GitRepository/taorai/README.md",
+		"/home/steven/GitRepository/taorai/LICENSE"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"themes",
+			"Cart\\User",
+			"newCart_User",
+			"theme",
+			"text_city",
+			"Zone",
+			"geo_zone_id",
+			"model_setting_store",
+			"error_order",
+			" This currency cannot be deleted as it is currently assigned to",
+			"1.6.0.2",
+			"fa fa-bell fa-lg",
+			"penging approval",
+			"logo.png",
+			"mycncart",
+			"Mycncart_Cart",
+			"   <li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-life-ring fa-lg\"></i></a>\n      <ul class=\"dropdown-menu dropdown-menu-right\">\n        <li class=\"dropdown-header\"><?php echo $text_help; ?></li>\n        <li><a href=\"http://www.mycncart.com\" target=\"_blank\"><?php echo $text_homepage; ?></a></li>\n        <li><a href=\"http://www.mycncart.com/index.php?route=blog/all\" target=\"_blank\"><?php echo $text_documentation; ?></a></li>\n        <li><a href=\"http://www.mycncart.cn\" target=\"_blank\"><?php echo $text_support; ?></a></li>\n      </ul>\n    </li>",
+			"mycncart"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "taorai.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dashboard",
+				"admin/view/template/extension/extension/dashboard.tpl"
+			],
+			[
+				"dashb",
+				"admin/controller/common/dashboard.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
