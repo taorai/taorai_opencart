@@ -100,6 +100,8 @@ class ControllerMarketingContact extends Controller {
 				$store_email = isset($setting['config_email']) ? $setting['config_email'] : $this->config->get('config_email');
 
 				$this->load->model('customer/customer');
+				
+				$this->load->model('newsletter/newsletter');
 
 				$this->load->model('customer/customer_group');
 
@@ -124,10 +126,10 @@ class ControllerMarketingContact extends Controller {
 							'start'             => ($page - 1) * 10,
 							'limit'             => 10
 						);
-
-						$email_total = $this->model_customer_customer->getTotalCustomers($customer_data);
-
-						$results = $this->model_customer_customer->getCustomers($customer_data);
+						
+						$email_total = $this->model_newsletter_newsletter->getTotalSubscribers();
+						
+						$results = $this->model_newsletter_newsletter->getSubscribers($customer_data);
 
 						foreach ($results as $result) {
 							$emails[] = $result['email'];
@@ -135,8 +137,8 @@ class ControllerMarketingContact extends Controller {
 						break;
 					case 'customer_all':
 						$customer_data = array(
-							'start' => ($page - 1) * 10,
-							'limit' => 10
+							'start'  => ($page - 1) * 10,
+							'limit'  => 10
 						);
 
 						$email_total = $this->model_customer_customer->getTotalCustomers($customer_data);
@@ -145,7 +147,7 @@ class ControllerMarketingContact extends Controller {
 
 						foreach ($results as $result) {
 							$emails[] = $result['email'];
-						}
+						}						
 						break;
 					case 'customer_group':
 						$customer_data = array(
@@ -160,10 +162,10 @@ class ControllerMarketingContact extends Controller {
 
 						foreach ($results as $result) {
 							$emails[$result['customer_id']] = $result['email'];
-						}
+						}						
 						break;
 					case 'customer':
-						if (!empty($this->request->post['customer'])) {
+						if (!empty($this->request->post['customer'])) {					
 							foreach ($this->request->post['customer'] as $customer_id) {
 								$customer_info = $this->model_customer_customer->getCustomer($customer_id);
 
@@ -172,23 +174,23 @@ class ControllerMarketingContact extends Controller {
 								}
 							}
 						}
-						break;
+						break;	
 					case 'affiliate_all':
 						$affiliate_data = array(
-							'start' => ($page - 1) * 10,
-							'limit' => 10
+							'start'  => ($page - 1) * 10,
+							'limit'  => 10
 						);
 
-						$email_total = $this->model_marketing_affiliate->getTotalAffiliates($affiliate_data);
+						$email_total = $this->model_marketing_affiliate->getTotalAffiliates($affiliate_data);		
 
 						$results = $this->model_marketing_affiliate->getAffiliates($affiliate_data);
 
 						foreach ($results as $result) {
 							$emails[] = $result['email'];
-						}
-						break;
+						}						
+						break;	
 					case 'affiliate':
-						if (!empty($this->request->post['affiliate'])) {
+						if (!empty($this->request->post['affiliate'])) {					
 							foreach ($this->request->post['affiliate'] as $affiliate_id) {
 								$affiliate_info = $this->model_marketing_affiliate->getAffiliate($affiliate_id);
 
@@ -197,10 +199,10 @@ class ControllerMarketingContact extends Controller {
 								}
 							}
 						}
-						break;
+						break;											
 					case 'product':
 						if (isset($this->request->post['product'])) {
-							$email_total = $this->model_sale_order->getTotalEmailsByProductsOrdered($this->request->post['product']);
+							$email_total = $this->model_sale_order->getTotalEmailsByProductsOrdered($this->request->post['product']);	
 
 							$results = $this->model_sale_order->getEmailsByProductsOrdered($this->request->post['product'], ($page - 1) * 10, 10);
 
@@ -208,12 +210,12 @@ class ControllerMarketingContact extends Controller {
 								$emails[] = $result['email'];
 							}
 						}
-						break;
+						break;												
 				}
 
 				if ($emails) {
 					$json['success'] = $this->language->get('text_success');
-
+					
 					$start = ($page - 1) * 10;
 					$end = $start + 10;
 
@@ -222,7 +224,7 @@ class ControllerMarketingContact extends Controller {
 					}
 
 					if ($end < $email_total) {
-						$json['next'] = str_replace('&amp;', '&', $this->url->link('marketing/contact/send', 'token=' . $this->session->data['token'] . '&page=' . ($page + 1), true));
+						$json['next'] = str_replace('&amp;', '&', $this->url->link('marketing/contact/send', 'token=' . $this->session->data['token'] . '&page=' . ($page + 1), 'SSL'));
 					} else {
 						$json['next'] = '';
 					}

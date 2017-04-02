@@ -75,7 +75,13 @@ $registry->set('session', $session);
 // Cache 
 $registry->set('cache', $factory->newCache($config->get('cache_type'), $config->get('cache_expire')));
 
-// Url
+//Unlimited colors theme
+
+require_once(DIR_SYSTEM . 'library/themeoptions.php');
+$theme_options = new ThemeOptions($registry, $loader);
+$registry->set('theme_options', $theme_options);
+
+
 if ($config->get('url_autostart')) {
 	$registry->set('url', $factory->newUrl($config->get('site_base'), $config->get('site_ssl')));
 }

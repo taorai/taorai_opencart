@@ -4,7 +4,7 @@ class Template {
 
   	public function __construct($adaptor) {
 	    $class = 'Template\\' . $adaptor;
-
+		
 		if (class_exists($class)) {
 			$this->adaptor = new $class();
 		} else {
@@ -16,7 +16,8 @@ class Template {
 		$this->adaptor->set($key, $value);
 	}
 
-	public function render($template) {
+	public function render($template, $registry) {
+		$this->adaptor->set('registry', $registry);
 		return $this->adaptor->render($template);
 	}
 }
